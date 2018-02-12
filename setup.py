@@ -6,7 +6,7 @@ setup(
       version='0.1.0',
       description='Convert text/file written in Bijoy to Unicode',
       url='http://github.com/mad-fox/bijoy2unicode',
-      download_url = 'http://github.com/mad-fox/bijoy2unicode/archive/0.1.0.tar.gz',
+      download_url = 'http://github.com/mad-fox/bijoy2unicode/archive/v0.1.0.tar.gz',
       author='Rajib Biswas',
       author_email='sarb.rb@gmail.com',
       license='MIT',
