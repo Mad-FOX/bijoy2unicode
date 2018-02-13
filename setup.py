@@ -1,12 +1,13 @@
 #from setuptools import setup
+
 from distutils.core import setup
 
 setup(
       name='bijoy2unicode',
-      version='0.1.0',
+      version='0.1.1',
       description='Convert text/file written in Bijoy to Unicode',
       url='http://github.com/mad-fox/bijoy2unicode',
-      download_url = 'http://github.com/mad-fox/bijoy2unicode/archive/v0.1.0.tar.gz',
+      download_url = 'http://github.com/mad-fox/bijoy2unicode/archive/v0.1.1.tar.gz',
       author='Rajib Biswas',
       author_email='sarb.rb@gmail.com',
       license='MIT',
