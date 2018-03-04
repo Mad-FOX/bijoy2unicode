@@ -11,7 +11,7 @@ The package is also available via pip.
 >  0.1.1
 
 ## License
-MIT
+MPL 2.0
 
 ## Installation
 
