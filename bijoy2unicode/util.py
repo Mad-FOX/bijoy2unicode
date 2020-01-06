@@ -11,7 +11,10 @@ def mb_strlen(str):
 # returns the i-th byte of the multi-byte string str
 def mbCharAt(str, i):
     # return mb_substr(str, i, 1)
-    return str[i]
+    try:
+        return str[i]
+    except:
+        pass
 
 # returns the javascript 'substring' method equivalent
 def subString(string, frm, to):
