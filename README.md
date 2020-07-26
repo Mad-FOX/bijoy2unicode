@@ -28,7 +28,7 @@ Code I've added in the repo is not optimized correctly (as I'm a noob). But it d
     toPrint=test.convertUnicodeToBijoy(uni_text)
     print(toPrint)
 Output:
-    `Dfq cv‡k av‡bi kx‡l ‡ewóZ cvwb‡Z fvmgvb RvZxq dyj kvcjv| Zvi gv_vq cvUMv‡Qi ci¯úi mshy³ wZbwU cvZv Ges Dfh cv‡k `ywU K‡i ZviKv|`
+    ```Dfq cv‡k av‡bi kx‡l ‡ewóZ cvwb‡Z fvmgvb RvZxq dyj kvcjv| Zvi gv_vq cvUMv‡Qi ci¯úi mshy³ wZbwU cvZv Ges Dfh cv‡k `ywU K‡i ZviKv|```
 
 
 ## References:
