@@ -1,4 +1,4 @@
-from . import util
+import util
 
 preConversionMap = {
         ' +':' ',
@@ -294,11 +294,13 @@ class Unicode:
 
         #global proConversionMap
 
-        #for (i = 0; i < mb_strlen(str); ++i) 
+        #for (i = 0; i < mb_strlen(str); ++i)
+ 
         i = 0
         while i < util.mb_strlen(str):
             #  Change refs
-            if (i < (util.mb_strlen(str) - 1) and util.mbCharAt(str, i) == 'র' and self.IsBanglaHalant(util.mbCharAt(str, i + 1)) and self.IsBanglaHalant(util.mbCharAt(str, i - 1))):
+            
+            if (i < (util.mb_strlen(str) - 1) and util.mbCharAt(str, i) == 'র' and self.IsBanglaHalant(util.mbCharAt(str, i + 1)) and not self.IsBanglaHalant(util.mbCharAt(str, i - 1))):
                 j = 1
                 while (True):
                     if (i - j < 0):
@@ -323,7 +325,7 @@ class Unicode:
 
             i += 1
 
-        str = util.doCharMap(str, proConversionMap)
+        #str = util.doCharMap(str, proConversionMap)
 
         #for (i = 0 i < mb_strlen(str) ++i) 
         i=0
@@ -518,7 +520,7 @@ class Unicode:
             "ন্থ"   :   "š’", 	"ন্দ"   :   "›`", 	"ন্দ্ব"   :   "›Ø", 
             "ন্ধ"   :   "Ü", 	"ন্ন"   :   "bœ", 	"ন্ব"   :   "š^", 
             "ন্ম"   :   "b¥", 	"প্ট"   :   "Þ", 	"প্ত"   :   "ß", 
-            "প্ন"   :   "cœ", 	"প্প"   :   "à", 	"প্ল"   :   "c­", 
+            "প্ন"   :   "cœ", 	"প্প"   :   "à", 	"প্ল"   :   "cø", 
             "প্স"   :   "á", 	"ফ্ল"   :   "d¬", 	"ব্জ"   :   "â", 
             "ব্দ"   :   "ã", 	"ব্ধ"   :   "ä", 	"ব্ব"   :   "eŸ", 
             "ব্ল"   :   "e­", 	"ভ্র"   :   "å", 	"ম্ন"   :   "gœ", 
@@ -528,13 +530,13 @@ class Unicode:
             "রূ"   :   "iƒ", 	"ল্ক"   :   "é", 	"ল্গ"   :   "ê", 
             "ল্ট"   :   "ë", 	"ল্ড"   :   "ì", 	"ল্প"   :   "í", 
             "ল্ফ"   :   "î", 	"ল্ব"   :   "j¦", 	"ল্ম"   :   "j¥", 
-            "ল্ল"   :   "j­", 	"শু"   :   "ï", 	"শ্চ"   :   "ð", 
+            "ল্ল"   :   "jø", 	"শু"   :   "ï", 	"শ্চ"   :   "ð", 
             "শ্ন"   :   "kœ", 	"শ্ব"   :   "k¦", 	"শ্ম"   :   "k¥", 
             "শ্ল"   :   "k­", 	"ষ্ক"   :   "®‹", 	"ষ্ক্র"   :   "®Œ", 
             "ষ্ট"   :   "ó", 	"ষ্ঠ"   :   "ô", 	"ষ্ণ"   :   "ò", 
             "ষ্প"   :   "®ú", 	"ষ্ফ"   :   "õ", 	"ষ্ম"   :   "®§", 
             "স্ক"   :   "¯‹", 	"স্ট"   :   "÷", 	"স্খ"   :   "ö", 
-            "স্ত"   :   "¯—", 	"স্তু"   :   "¯‘", 	"স্থ"   :   "¯’", 
+            "স্ত"   :   "¯Í", 	"স্তু"   :   "¯‘", 	"স্থ"   :   "¯’", 
             "স্ন"   :   "mœ", 	"স্প"   :   "¯ú", 	"স্ফ"   :   "ù", 
             "স্ব"   :   "¯^", 	"স্ম"   :   "¯§", 	"স্ল"   :   "¯­", 
             "হু"   :   "û", 	"হ্ণ"   :   "nè", 	"হ্ব"   :   "nŸ", 
