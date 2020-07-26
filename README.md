@@ -83,7 +83,7 @@ Now we can convert the text (with font tags), call an widget using id, and then 
 
 ```
     self.ids.bangla_mixed_text.markup = True
-    self.ids.bangla_mixed_text.text = toBijoy(sub_text_g)
+    self.ids.bangla_mixed_text.text = toBijoy(str)
 ```
 
 In kv language we need to do something like this:
