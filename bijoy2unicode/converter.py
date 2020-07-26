@@ -573,6 +573,77 @@ class Unicode:
         
         return srcString
 
+
+# This function is just a post fix
+
+def toBijoy(str):
+    def isEnglish(s):
+        return s.isascii()
+    #str = 'add me means, আমাকে এড করো। ! amader dehshe ফেসবুক সহ সামাজিক বিভিন্ন যোগাযোগ মাধ্যম here ব্যবহার করার' #Just a random text
+    #print(str)
+
+    test = Unicode()
+    b_flag = 0
+    ftext = ""
+    temp = ''
+    for char in str:
+        #print(char)
+        #print(isEnglish(char))
+        if char == ' ' and b_flag == 0:
+            ftext += char
+        elif char == ' ' and b_flag == 1:
+            temp += char
+        elif isEnglish(char) is False:
+            if b_flag == 0:
+                temp += "কর্ড" + char
+                b_flag = 1
+            else:
+                temp += char
+        else:
+            if b_flag == 1:
+                temp = test.convertUnicodeToBijoy(temp)
+                #print(temp[-1:])
+                if temp[-1:] == '©':
+                    #print("triggered")
+                    temp = temp[:-1]
+                
+
+                temp = temp[2:] + char
+                ftext += temp
+                b_flag = 0
+                temp = ''
+            else:
+                #temp = test.convertUnicodeToBijoy(temp)
+                ftext += char
+    
+    ftext = ftext.replace("q‡", "‡q")
+    ftext = ftext.replace("o‡", "‡o")
+    
+
+    
+
+    ftext = list(ftext)
+    #print(ftext)
+    #print(len(ftext))
+
+    i = 0
+    while i < len(ftext):
+        #print(i)
+        #print(ftext[i])
+        #print(ftext[i+1])
+        if ftext[i] == '©':
+            ftext[i] = ftext[i+1]
+            ftext[i+1] = '©'
+            i+=2
+        else:
+            i+=1
+            
+    ftext = "".join(ftext)
+    return ftext
+
+
+
+
     def __init__(self):
         pass
     #def __init__(self):
