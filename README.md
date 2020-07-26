@@ -1,6 +1,3 @@
-
-# bijoy2unicode
-
 # Why I forked this
 I found the unicode to bijoy functionality in original repo as not working properly or partially functioning. Note this repo only provides unicode to bijoy functionality, not the reverse functionality.
 
@@ -80,6 +77,7 @@ But how to generate (English and Bangla mixed) text with tag?
         return ftext
 
 ```
+
 
 Now we can convert the text (with font tags), call an widget using id, and then assign formatted text.
 
