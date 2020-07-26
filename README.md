@@ -1,6 +1,9 @@
 
 # bijoy2unicode
 
+# Why I forked this
+I found the original repo as properly unmaintained or partially functioning.
+
 ## Purpose
 Python 3 package for converting Bijoy &lt;=> Unicode (UTF-8) for Bengali/Bangla.
 
