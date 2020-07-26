@@ -31,6 +31,78 @@ Output:
     ```Dfq cv‡k av‡bi kx‡l ‡ewóZ cvwb‡Z fvmgvb RvZxq dyj kvcjv| Zvi gv_vq cvUMv‡Qi ci¯úi mshy³ wZbwU cvZv Ges Dfh cv‡k `ywU K‡i ZviKv|```
 
 
+## Usage for Kivy
+We can use ```[font][/font]``` tag to use Bangla ANSI text with English text in same Label widget. Like this (in kv language):
+``` Label:
+        text = "[font=font/SutonnyMJ]Avwg evsjvq K_v ewj[/font] means I speak Bangla"
+```
+
+But how to generate (English and Bangla mixed) text with tag?
+
+```
+
+    def toBijoy(str):
+        def isEnglish(s):
+            return s.isascii()
+        
+        import converter
+        test = converter.Unicode()
+        b_flag = 0
+        ftext = ""
+        temp = ''
+        for char in str:
+            #print(char)
+            #print(isEnglish(char))
+            if char == ' ' and b_flag == 0:
+                ftext += char
+            elif char == ' ' and b_flag == 1:
+                temp += char
+            elif isEnglish(char) is False:
+                if b_flag == 0:
+                    temp += "[font=font/SutonnyMJ]" + char
+                    b_flag = 1
+                else:
+                    temp += char
+            else:
+                if b_flag == 1:
+                    temp = test.convertUnicodeToBijoy(temp)
+                    #ftext += a.ConvertToASCII('bijoy', temp) + "[/font]"
+                    #print(temp[-1:])
+                    if temp[-1:] == '©':
+                        #print("triggered")
+                        temp = temp[:-1]
+
+
+                    temp = "[/font]" + char
+                    ftext += temp
+                    b_flag = 0
+                    temp = ''
+                else:
+                    #temp = test.convertUnicodeToBijoy(temp)
+                    ftext += char
+ 
+
+        ftext = "".join(ftext)
+        return ftext
+
+
+```
+
+Now we can convert the text (with font tags), call an widget using id, and then assign formatted text.
+
+```
+    self.ids.bangla_mixed_text.markup = True
+    self.ids.bangla_mixed_text.text = toBijoy(sub_text_g)
+```
+
+In kv language we need to do something like this:
+```
+    Label:
+        id: bangla_mixed_text
+        text: ''
+```
+
+
 ## References:
 https://github.com/Mad-FOX/bijoy2unicode
 
