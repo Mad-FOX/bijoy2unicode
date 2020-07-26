@@ -51,8 +51,6 @@ But how to generate (English and Bangla mixed) text with tag?
         ftext = ""
         temp = ''
         for char in str:
-            #print(char)
-            #print(isEnglish(char))
             if char == ' ' and b_flag == 0:
                 ftext += char
             elif char == ' ' and b_flag == 1:
@@ -66,25 +64,20 @@ But how to generate (English and Bangla mixed) text with tag?
             else:
                 if b_flag == 1:
                     temp = test.convertUnicodeToBijoy(temp)
-                    #ftext += a.ConvertToASCII('bijoy', temp) + "[/font]"
-                    #print(temp[-1:])
+                    
                     if temp[-1:] == '©':
-                        #print("triggered")
                         temp = temp[:-1]
-
-
+                    
                     temp = "[/font]" + char
                     ftext += temp
                     b_flag = 0
                     temp = ''
                 else:
-                    #temp = test.convertUnicodeToBijoy(temp)
                     ftext += char
  
 
         ftext = "".join(ftext)
         return ftext
-
 
 ```
 
