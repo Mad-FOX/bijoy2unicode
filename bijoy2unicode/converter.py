@@ -474,17 +474,6 @@ class Unicode:
             i += 1
         return str
 
-    # main conversion def
-    def convertBijoyToUnicode(self, srcString):
-        if not srcString:
-            return srcString
-
-        srcString = util.doCharMap(srcString, preConversionMap)
-        srcString = util.doCharMap(srcString, conversionMap)
-        
-        srcString = self.reArrangeUnicodeConvertedText(srcString)
-        srcString = util.doCharMap(srcString, postConversionMap)
-        return srcString
 
     def convertUnicodeToBijoy(self, srcString):
         if not srcString:
