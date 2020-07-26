@@ -9,8 +9,7 @@ The code I've added in this repo is not optimized correctly (as I'm a noob). But
 
 
 ## Installation
-    
-    Just copy the unicode2bijoy folder to project folder.
+Just copy the unicode2bijoy folder to project folder.
 
 ## Example
     from unicode2bijoy import converter
@@ -92,7 +91,7 @@ In kv language we need to do something like this:
         id: bangla_mixed_text
         text: ''
 ```
-
+ 
 
 ## References:
 https://github.com/Mad-FOX/bijoy2unicode
