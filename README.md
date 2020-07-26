@@ -2,41 +2,37 @@
 # bijoy2unicode
 
 # Why I forked this
-I found the original repo as properly unmaintained or partially functioning.
+I found the unicode to bijoy functionality in original repo as not working properly or partially functioning. Note this repo only provides unicode to bijoy functionality, not the reverse functionality.
 
-## Purpose
-Python 3 package for converting Bijoy &lt;=> Unicode (UTF-8) for Bengali/Bangla.
+## Main Purpose
+I was creating an app using [Kivy](https://github.com/kivy/kivy). Unfortunately, Bangla Unicode text can't be implemented in Kivy. After a little searching, I found [this repo](https://github.com/Mad-FOX/bijoy2unicode) which was not functioning properly converting Unicode Bangla text to ANCI Bangla text. After a little tweaking, I somehow managed to get this work, Alhamdulillah.
+### Warning
+Code I've added in the repo is not optimized correctly (as I'm a noob). But it does it's job correctly (as far as I've tested). Feel free to submit issues and suggestions.
 
-The package is also available via pip.
 
-## Version
-
->  0.1.1
-
-## License
-MPL 2.0
 
 ## Installation
     
-    Just copy the unicode2bijoy folder.
+    Just copy the unicode2bijoy folder to project folder.
 
 ## Example
     from unicode2bijoy import converter
     
     test = converter.Unicode()
+    
     bijoy_text = 'Dfq cv‡k av‡bi kx‡l †ewóZ cvwb‡Z fvmgvb RvZxq dzj kvcjv| Zvi gv_vq cvUMv‡Qi ci¯úi mshy³ wZbwU cvZv Ges Dfh cv‡k `ywU K‡i ZviKv|'
+    #print(bijoy_text)
+ 
     
-    print(bijoy_text)
-    
-    toPrint=test.convertBijoyToUnicode(bijoy_text)
-    print(toPrint)
-    # উভয় পাশে ধানের শীষে বেষ্টিত পানিতে ভাসমান জাতীয় ফুল শাপলা। তার মাথায় পাটগাছের পরস্পর সংযুক্ত তিনটি পাতা এবং উভয পাশে দুটি করে তারকা।
 
-    toPrint=test.convertUnicodeToBijoy(toPrint)
+    toPrint=test.convertUnicodeToBijoy(uni_text)
     print(toPrint)
+Output:
+    `উভয় পাশে ধানের শীষে বেষ্টিত পানিতে ভাসমান জাতীয় ফুল শাপলা। তার মাথায় পাটগাছের পরস্পর সংযুক্ত তিনটি পাতা এবং উভয পাশে দুটি করে তারকা।`
 
 
 ## References:
+https://github.com/Mad-FOX/bijoy2unicode
 
 https://github.com/bahar/BijoyToUnicode
 
