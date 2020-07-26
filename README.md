@@ -4,7 +4,7 @@ I found the unicode to bijoy functionality in original repo as not working prope
 ## Main Purpose
 I was creating an app using [Kivy](https://github.com/kivy/kivy). Unfortunately, Bangla Unicode text can't be implemented in Kivy. After a little searching, I found [this repo](https://github.com/Mad-FOX/bijoy2unicode) which was not functioning properly converting Unicode Bangla text to ANCI Bangla text. After a little tweaking, I somehow managed to get this work, Alhamdulillah.
 ### Warning
-Code I've added in the repo is not optimized correctly (as I'm a noob). But it does it's job correctly (as far as I've tested). Feel free to submit issues and suggestions.
+The code I've added in this repo is not optimized correctly (as I'm a noob). But it does it's job correctly (as far as I've tested). Feel free to submit issues and suggestions.
 
 
 
