@@ -17,11 +17,11 @@ The package is also available via pip.
 MPL 2.0
 
 ## Installation
-
-    pip install bijoy2unicode
+    
+    Just copy the unicode2bijoy folder.
 
 ## Example
-    from bijoy2unicode import converter
+    from unicode2bijoy import converter
     
     test = converter.Unicode()
     bijoy_text = 'Dfq cv‡k av‡bi kx‡l †ewóZ cvwb‡Z fvmgvb RvZxq dzj kvcjv| Zvi gv_vq cvUMv‡Qi ci¯úi mshy³ wZbwU cvZv Ges Dfh cv‡k `ywU K‡i ZviKv|'
