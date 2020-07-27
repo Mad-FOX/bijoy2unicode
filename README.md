@@ -13,14 +13,9 @@ Just copy the unicode2bijoy folder to project folder.
 
 ## Example
     from unicode2bijoy import converter
-    
     test = converter.Unicode()
     
     uni_text = 'উভয় পাশে ধানের শীষে বেষ্টিত পানিতে ভাসমান জাতীয় ফুল শাপলা। তার মাথায় পাটগাছের পরস্পর সংযুক্ত তিনটি পাতা এবং উভয পাশে দুটি করে তারকা।'
-    #print(bijoy_text)
- 
-    
-
     toPrint=test.convertUnicodeToBijoy(uni_text)
     print(toPrint)
 Output:
