@@ -38,42 +38,36 @@ But how to generate (English and Bangla mixed) text with tag?
 ```
 
     def toBijoy(str):
-        def isEnglish(s):
-            return s.isascii()
-        
-        import converter
-        test = converter.Unicode()
-        b_flag = 0
-        ftext = ""
-        temp = ''
-        for char in str:
-            if char == ' ' and b_flag == 0:
-                ftext += char
-            elif char == ' ' and b_flag == 1:
-                temp += char
-            elif isEnglish(char) is False:
-                if b_flag == 0:
-                    temp += "[font=font/SutonnyMJ]" + char
-                    b_flag = 1
-                else:
-                    temp += char
+    def isEnglish(s):
+        return s.isascii()
+    import converter
+    test = converter.Unicode()
+    b_flag = 0
+    ftext = ""
+    temp = ''
+    for char in str:
+        if char == ' ' and b_flag == 0:
+            ftext += char
+        elif char == ' ' and b_flag == 1:
+            temp += char
+        elif isEnglish(char) is False:
+            if b_flag == 0:
+                temp += "কর্ড [font=font/SutonnyMJ]" + char
+                b_flag = 1
             else:
-                if b_flag == 1:
-                    temp = test.convertUnicodeToBijoy(temp)
-                    
-                    if temp[-1:] == '©':
-                        temp = temp[:-1]
-                    
-                    temp = "[/font]" + char
-                    ftext += temp
-                    b_flag = 0
-                    temp = ''
-                else:
-                    ftext += char
- 
+                temp += char
+        else:
+            if b_flag == 1:
+                temp = test.convertUnicodeToBijoy(temp)
+                temp = temp[4:] + "[/font]" + char
+                ftext += temp
+                b_flag = 0
+                temp = ''
+            else:
+                ftext += char
 
-        ftext = "".join(ftext)
-        return ftext
+    
+    return ftext
 
 ```
 
